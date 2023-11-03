@@ -21,6 +21,11 @@ class Student:
 
     def set_average_score(self, average_score):
         self.average_score = average_score
+student1 = Student("Иван", 20, 4.5)
+print(f"Имя: {student1.get_name()}, Возраст: {student1.get_age()}, Средний балл: {student1.get_average_grade()}")
+student1.set_name("Петр")
+student1.set_average_grade(4.8)
+print(f"Измененное имя: {student1.get_name()}, Новый средний балл: {student1.get_average_grade()}")
 
 class Rectangle:
     def __init__(self, length, width):
@@ -32,6 +37,11 @@ class Rectangle:
 
     def calculate_perimeter(self):
         return 2 * (self.length + self.width)
+
+rectangle1 = Rectangle(5, 3)
+area = rectangle1.calculate_area()
+perimeter = rectangle1.calculate_perimeter()
+print(f"Площадь: {area}, Периметр: {perimeter}")
 
 
 
@@ -58,7 +68,10 @@ class Car:
         return f"{self.year} {self.make} {self.model}, Mileage: {self.mileage} miles"
 
 
-
+car1 = Car("Toyota", "Camry", 2020, 35000)
+print(car1.display_info())
+car1.change_mileage(40000)
+print("Измененный пробег:", car1.display_info())
 
 class BankAccount:
     def __init__(self, client_name, balance):
@@ -84,8 +97,11 @@ class BankAccount:
         return self.transactions
 
 
-
-
+account1 = BankAccount("Иван Петров", 1000)
+account1.deposit(500)
+account1.withdraw(200)
+print(f"Баланс: {account1.get_balance()} руб.")
+print("История транзакций:", account1.get_transaction_history())
 
 class Triangle:
     def __init__(self, side1, side2, side3):
@@ -104,3 +120,8 @@ class Triangle:
     def calculate_area(self):
         s = (self.side1 + self.side2 + self.side3) / 2
         return (s * (s - self.side1) * (s - self.side2) * (s - self.side3))**0.5
+
+triangle1 = Triangle(5, 5, 5)
+triangle2 = Triangle(4, 4, 6)
+print("Треугольник 1:", triangle1.determine_type(), "Площадь:", triangle1.calculate_area())
+print("Треугольник 2:", triangle2.determine_type(), "Площадь:", triangle2.calculate_area())
